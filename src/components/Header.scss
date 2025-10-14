@@ -1,0 +1,70 @@
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  padding-left: 1rem;   /* px-4 */
+  padding-right: 1rem;  /* px-4 */
+
+  /* sm:px-6 */
+  @media (min-width: 640px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  /* lg:px-8 */
+  @media (min-width: 1024px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.container {
+  max-width: 1280px; /* Equivalent to 'container' in Tailwind */
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;    /* py-4 */
+  padding-bottom: 1rem; /* py-4 */
+}
+
+.logo a {
+  /* You can add specific logo styles here if needed */
+  color: var(--snow); /* Example color */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav {
+  display: none; /* hidden */
+
+  /* md:flex */
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Replaces space-x-8 for modern browsers */
+    font-family: var(--font-instrument-sans);
+  }
+}
+
+.navLink {
+  padding-bottom: 0.25rem; /* pb-1 */
+  text-transform: capitalize;
+  color: var(--snow);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--light-blue);
+  }
+
+  /* This is the modifier class for the active link */
+  &.active {
+    color: var(--light-blue);
+    border-bottom: 2px solid var(--yellow-underline);
+  }
+}

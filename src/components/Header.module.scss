@@ -5,20 +5,20 @@
   left: 0;
   width: 100%;
   z-index: 20;
-  padding-left: 1rem;   /* px-4 */
-  padding-right: 1rem;  /* px-4 */
+  // padding-left: 1rem;   /* px-4 */
+  // padding-right: 1rem;  /* px-4 */
 
-  /* sm:px-6 */
-  @media (min-width: 640px) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
+//   /* sm:px-6 */
+//   @media (min-width: 640px) {
+//     padding-left: 1.5rem;
+//     padding-right: 1.5rem;
+//   }
 
-  /* lg:px-8 */
-  @media (min-width: 1024px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+//   /* lg:px-8 */
+//   @media (min-width: 1024px) {
+//     padding-left: 2rem;
+//     padding-right: 2rem;
+//   }
 }
 
 .container {
@@ -32,22 +32,24 @@
   padding-bottom: 1rem; /* py-4 */
 }
 
-.logo a {
-  /* You can add specific logo styles here if needed */
-  color: var(--snow); /* Example color */
-  font-weight: bold;
-  text-decoration: none;
-}
-
 .nav {
-  display: none; /* hidden */
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  width: 100%;
 
-  /* md:flex */
-  @media (min-width: 768px) {
-    display: flex;
-    align-items: center;
-    gap: 2rem; /* Replaces space-x-8 for modern browsers */
-    font-family: var(--font-instrument-sans);
+  a {
+    color: #FFFAFA;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+
+    &.active {
+      color: #89D6E8;
+      text-decoration: underline 4px;
+      text-decoration-color: #FFF204;
+      text-underline-offset: 5px;
+    }
   }
 }
 
@@ -59,7 +61,7 @@
   transition: color 0.2s ease-in-out;
 
   &:hover {
-    color: var(--light-blue);
+    color: #89D6E8;
   }
 
   /* This is the modifier class for the active link */

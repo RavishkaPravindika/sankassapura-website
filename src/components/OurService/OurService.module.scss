@@ -1,7 +1,7 @@
 .ourServiceSection {
   background: linear-gradient(180deg, #D9D9D9 50%, #89D6E8 100%);
   position: relative;
-  margin-top: -12rem;
+  margin-top: -4rem;
   z-index: 1;
   padding-top: 12rem;
   padding-bottom: 5rem;
@@ -26,16 +26,16 @@
   // place-items: center;
   // justify-content: center;
   // top: 0;
-  bottom: 0;
+  bottom: -80px;
   // margin: auto 0;
   left: 0;
   width: 50%;
   height: 650px;
-  // z-index: 2;
+  z-index: 2;
 }
 
 .ourServiceImage {
-  object-fit: contain;
+  object-fit: fill;
 }
 
 .ourServiceTextWrapper {

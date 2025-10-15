@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Jomhuria, JetBrains_Mono, Instrument_Sans } from "next/font/google";
 import HeroBackground from "@/components/background/HeroBackground";
-import Header from "@/components/header/Header";
+import Header from "@/components/Header";
 import "@/styles/globals.scss";
 
 const jomhuria = Jomhuria({

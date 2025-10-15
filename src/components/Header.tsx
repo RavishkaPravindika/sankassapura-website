@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import styles from './Header.module.scss';
 
 const Header = () => {
@@ -19,7 +20,12 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Link href="/">SANKASSAPURA</Link>
+          <Link href="/"><Image
+                    src="/images/logo.png"
+                    alt="logo"
+                    width={50}
+                    height={50}
+                  /></Link>
         </div>
         <nav className={styles.nav}>
           {navLinks.map((link) => {

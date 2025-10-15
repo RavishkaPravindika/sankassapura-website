@@ -40,7 +40,7 @@ const OurService = () => {
             Lorem Ipsum.
           </p>
           <button className={styles.button}>
-            Gallery
+            Service
           </button>
         </div>
       </div>

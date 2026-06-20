@@ -29,18 +29,9 @@ export default function TherosPage() {
             <p className="section-label" style={{ textAlign: 'center', justifyContent: 'center' }}>{t('theros.chief.label')}</p>
           </SectionWrapper>
           <SectionWrapper delay={80}>
-            <div style={{
-              background: 'var(--bg-card)',
-              border: '1px solid var(--border)',
-              borderRadius: 16,
-              overflow: 'hidden',
-              display: 'grid',
-              gridTemplateColumns: '380px 1fr',
-              boxShadow: 'var(--shadow-xl)',
-              marginTop: '2rem',
-            }}>
+            <div className="chief-thero-layout">
               {/* Image side */}
-              <div style={{ position: 'relative', minHeight: 520 }}>
+              <div className="chief-thero-image-col">
                 <Image src="/images/thero_chief.png" alt={t('theros.chief.name')} fill
                   style={{ objectFit: 'cover', objectPosition: 'top' }} />
                 <div style={{
@@ -53,8 +44,8 @@ export default function TherosPage() {
               </div>
 
               {/* Content side */}
-              <div style={{ padding: '2.5rem' }}>
-                <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem', marginBottom: '0.5rem', lineHeight: 1.3 }}>
+              <div className="chief-thero-content">
+                <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.2rem, 3vw, 1.5rem)', marginBottom: '0.5rem', lineHeight: 1.3 }}>
                   {t('theros.chief.name')}
                 </h2>
                 <p style={{ color: 'var(--gold)', fontWeight: 600, fontSize: '0.85rem', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
@@ -64,17 +55,13 @@ export default function TherosPage() {
                 <p style={{ marginBottom: '1rem' }}>{t('theros.chief.bio2')}</p>
                 <p style={{ marginBottom: '1.75rem' }}>{t('theros.chief.bio3')}</p>
 
-                <blockquote style={{
-                  borderLeft: '3px solid var(--gold)',
-                  paddingLeft: '1.25rem',
-                  marginBottom: '2rem',
-                }}>
+                <blockquote style={{ borderLeft: '3px solid var(--gold)', paddingLeft: '1.25rem', marginBottom: '2rem' }}>
                   <p style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontSize: '1rem', color: 'var(--text-primary)', marginBottom: 0 }}>
                     {t('theros.chief.quote')}
                   </p>
                 </blockquote>
 
-                <div className="grid--2" style={{ gap: '1.5rem' }}>
+                <div className="chief-thero-edu-grid">
                   <div>
                     <h4 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--gold)' }}>
                       {t('theros.chief.education')}
@@ -118,18 +105,9 @@ export default function TherosPage() {
           <div className="grid--3">
             {residents.map((monk, i) => (
               <SectionWrapper key={i} delay={i * 100}>
-                <div style={{
-                  background: 'var(--bg-card)',
-                  border: '1px solid var(--border)',
-                  borderRadius: 12,
-                  overflow: 'hidden',
-                  boxShadow: 'var(--shadow-sm)',
-                  transition: 'all 0.3s ease',
-                  cursor: 'pointer',
-                }}
+                <div className="card" style={{ cursor: 'pointer' }}
                   onClick={() => setExpanded(expanded === i ? null : i)}
                 >
-                  {/* Placeholder image */}
                   <div style={{
                     background: 'linear-gradient(135deg, var(--gold-soft) 0%, var(--saffron-soft) 100%)',
                     aspectRatio: '4/3',
@@ -137,14 +115,13 @@ export default function TherosPage() {
                     fontSize: '4.5rem',
                   }}>🧘</div>
 
-                  <div style={{ padding: '1.5rem' }}>
+                  <div className="card__body">
                     <p style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.4rem' }}>
                       Resident Thero
                     </p>
                     <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.15rem', marginBottom: '0.4rem' }}>{monk.name}</h3>
                     <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1rem' }}>{monk.title}</p>
 
-                    {/* Expand toggle */}
                     <button
                       style={{ background: 'none', border: 'none', color: 'var(--gold)', fontSize: '0.85rem', fontWeight: 600, cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center', gap: '0.4rem' }}
                       aria-expanded={expanded === i}
@@ -171,11 +148,7 @@ export default function TherosPage() {
       <section className="section">
         <div className="container">
           <SectionWrapper>
-            <div style={{
-              maxWidth: 780,
-              margin: '0 auto',
-              textAlign: 'center',
-            }}>
+            <div style={{ maxWidth: 780, margin: '0 auto', textAlign: 'center' }}>
               <p className="section-label" style={{ justifyContent: 'center' }}>{t('theros.message.label')}</p>
               <h2 className="section-title">{t('theros.message.title')}</h2>
               <div className="lotus-divider"><span className="lotus-divider-icon">🪷</span></div>
@@ -183,7 +156,7 @@ export default function TherosPage() {
                 background: 'var(--bg-elevated)',
                 border: '1px solid var(--gold-border)',
                 borderRadius: 12,
-                padding: '3rem',
+                padding: 'clamp(1.5rem, 4vw, 3rem)',
                 marginTop: '1rem',
                 position: 'relative',
               }}>
@@ -191,15 +164,15 @@ export default function TherosPage() {
                 <p style={{
                   fontFamily: 'Playfair Display, serif',
                   fontStyle: 'italic',
-                  fontSize: '1.15rem',
+                  fontSize: 'clamp(1rem, 2.5vw, 1.15rem)',
                   lineHeight: 1.9,
                   color: 'var(--text-primary)',
                   marginBottom: '1.5rem',
                 }}>
                   {t('theros.message.text')}
                 </p>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
-                  <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'linear-gradient(135deg, var(--gold), var(--saffron))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', color: 'white' }}>🙏</div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+                  <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'linear-gradient(135deg, var(--gold), var(--saffron))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', color: 'white', flexShrink: 0 }}>🙏</div>
                   <div style={{ textAlign: 'left' }}>
                     <p style={{ fontWeight: 600, color: 'var(--text-primary)', marginBottom: 0, fontSize: '0.95rem' }}>{t('theros.chief.shortName')}</p>
                     <p style={{ fontSize: '0.8rem', color: 'var(--gold)' }}>{t('theros.chief.title')}</p>

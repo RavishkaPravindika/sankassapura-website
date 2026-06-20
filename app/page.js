@@ -4,11 +4,10 @@ import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 
-// ── Placeholder data ──────────────────────────────────────────
 const UPCOMING_EVENTS = [
   { day: '12', month: 'Jul', category: 'Poya Day', title: 'Esala Full Moon Poya Day', time: '6:00 AM', venue: 'Main Shrine Hall' },
   { day: '19', month: 'Jul', category: 'Meditation', title: 'Weekend Mindfulness Retreat', time: '8:00 AM', venue: 'Meditation Hall' },
-  { day: '26', month: 'Jul', category: 'Dhamma', title: 'Dhamma Sermon by Ven. Dhammāloka Thero', time: '7:00 PM', venue: 'Community Hall' },
+  { day: '26', month: 'Jul', category: 'Dhamma', title: 'Dhamma Sermon by Ven. Ariya Wimala Thissa Thero', time: '7:00 PM', venue: 'Community Hall' },
 ];
 
 const ACTIVITIES = [
@@ -82,7 +81,6 @@ export default function HomePage() {
             </div>
           </SectionWrapper>
 
-          {/* Stats */}
           <SectionWrapper delay={100} style={{ marginTop: '4rem' }}>
             <div className="stats-grid">
               {[
@@ -150,17 +148,16 @@ export default function HomePage() {
                 <h2 className="section-title">{t('historyPreview.title')}</h2>
                 <div className="lotus-divider"><span className="lotus-divider-icon">🌿</span></div>
                 <p style={{ marginBottom: '2rem' }}>{t('historyPreview.description')}</p>
-                {/* Mini timeline */}
                 <div className="timeline" style={{ marginBottom: '2rem' }}>
                   {[
-                    { year: '1985', label: 'First Dhamma gatherings in Berlin' },
-                    { year: '1990', title: 'Temple Committee established' },
-                    { year: '2000', label: 'Official temple consecration ceremony' },
-                    { year: '2010', label: 'New purpose-built temple complex opened' },
+                    { year: '1985', label: 'First Dhamma gatherings' },
+                    { year: '1990', label: 'Temple Committee established' },
+                    { year: '2000', label: 'Official temple consecration' },
+                    { year: '2010', label: 'New temple complex opened' },
                   ].map((e, i) => (
                     <div key={i} className="timeline-item">
                       <div className="timeline-item__year">{e.year}</div>
-                      <div className="timeline-item__desc">{e.label || e.title}</div>
+                      <div className="timeline-item__desc">{e.label}</div>
                     </div>
                   ))}
                 </div>
@@ -175,7 +172,7 @@ export default function HomePage() {
       <section className="section" style={{ background: 'var(--bg-elevated)' }}>
         <div className="container">
           <SectionWrapper>
-            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '1rem' }}>
+            <div className="section-row-header">
               <div>
                 <p className="section-label">{t('eventsPreview.sectionLabel')}</p>
                 <h2 className="section-title" style={{ marginBottom: 0 }}>{t('eventsPreview.title')}</h2>
@@ -199,7 +196,6 @@ export default function HomePage() {
                       <span>📍 {ev.venue}</span>
                     </div>
                   </div>
-                  <Link href="/events" className="btn btn--secondary btn--sm">{t('eventsPreview.register')}</Link>
                 </div>
               </SectionWrapper>
             ))}
@@ -217,45 +213,22 @@ export default function HomePage() {
               <p style={{ marginBottom: '2.5rem' }}>{t('dhamma.description')}</p>
             </div>
           </SectionWrapper>
-
-          {/* Featured sermon card */}
           <SectionWrapper delay={100}>
-            <div style={{
-              background: 'var(--bg-card)',
-              border: '1px solid var(--border)',
-              borderRadius: 12,
-              padding: '2.5rem',
-              display: 'grid',
-              gridTemplateColumns: '1fr auto',
-              gap: '2rem',
-              alignItems: 'center',
-              boxShadow: 'var(--shadow-md)',
-              maxWidth: 860,
-              margin: '0 auto',
-            }}>
-              <div>
+            <div className="dhamma-card">
+              <div className="dhamma-card__body">
                 <span className="badge badge--gold" style={{ marginBottom: '1rem' }}>Featured Sermon</span>
                 <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.4rem', marginBottom: '0.75rem' }}>
                   "The Four Noble Truths — A Path to Liberation"
                 </h3>
                 <p style={{ marginBottom: '1.5rem', fontSize: '0.95rem' }}>
-                  Ven. Ariya Wimala Thissa Thero · 45 min · English & Sinhala
+                  Ven. Ariya Wimala Thissa Thero · 45 min · English &amp; Sinhala
                 </p>
-                <div style={{ display: 'flex', gap: '1rem' }}>
+                <div className="dhamma-card__btns">
                   <button className="btn btn--primary">{t('dhamma.listenNow')}</button>
                   <Link href="/about" className="btn btn--ghost">{t('dhamma.readDhamma')}</Link>
                 </div>
               </div>
-              <div style={{
-                width: 100, height: 100,
-                background: 'linear-gradient(135deg, var(--gold-soft), var(--saffron-soft))',
-                border: '2px solid var(--gold-border)',
-                borderRadius: '50%',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: '2.5rem', flexShrink: 0,
-              }}>
-                🔊
-              </div>
+              <div className="dhamma-card__icon" aria-hidden="true">🔊</div>
             </div>
           </SectionWrapper>
         </div>
@@ -287,7 +260,7 @@ export default function HomePage() {
       <section className="section" style={{ background: 'var(--bg-primary)' }}>
         <div className="container">
           <SectionWrapper>
-            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '1rem' }}>
+            <div className="section-row-header">
               <div>
                 <p className="section-label">{t('galleryPreview.sectionLabel')}</p>
                 <h2 className="section-title" style={{ marginBottom: 0 }}>{t('galleryPreview.title')}</h2>
@@ -314,27 +287,19 @@ export default function HomePage() {
       <section className="section" style={{ background: 'var(--bg-elevated)' }}>
         <div className="container">
           <SectionWrapper>
-            <div style={{
-              background: 'var(--bg-card)',
-              border: '1px solid var(--border)',
-              borderRadius: 16,
-              overflow: 'hidden',
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              boxShadow: 'var(--shadow-lg)',
-            }}>
-              <div style={{ padding: '3.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div className="donation-cta-card">
+              <div className="donation-cta-card__content">
                 <p className="section-label">{t('donationsPreview.sectionLabel')}</p>
                 <h2 className="section-title">{t('donationsPreview.title')}</h2>
                 <p style={{ marginBottom: '2rem' }}>{t('donationsPreview.description')}</p>
-                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <div className="donation-cta-card__btns">
                   <Link href="/donations" className="btn btn--primary">{t('donationsPreview.donate')}</Link>
                   <Link href="/donations" className="btn btn--ghost">{t('donationsPreview.learnMore')}</Link>
                 </div>
               </div>
-              <div style={{ position: 'relative', minHeight: 320 }}>
+              <div className="donation-cta-card__image">
                 <Image src="/images/donations_section.png" alt="Temple oil lamps offering" fill style={{ objectFit: 'cover' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, var(--bg-card) 0%, transparent 30%)' }} />
+                <div className="donation-cta-card__image-overlay" />
               </div>
             </div>
           </SectionWrapper>
@@ -364,17 +329,10 @@ export default function HomePage() {
                     <div className="contact-info-card__label">{item.label}</div>
                     <div className="contact-info-card__value">
                       {item.link ? (
-                        <a
-                          style={{ color: 'var(--text-primary)' }}
-                          href={item.link}
-                          target={item.link.startsWith('http') ? '_blank' : undefined}
-                          rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                        >
+                        <a style={{ color: 'var(--text-primary)' }} href={item.link}>
                           {item.value}
                         </a>
-                      ) : (
-                        item.value
-                      )}
+                      ) : item.value}
                     </div>
                   </div>
                 </div>

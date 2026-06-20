@@ -1,0 +1,351 @@
+/* ============================================================
+   COMPREHENSIVE MOBILE RESPONSIVE OVERRIDES
+   Adds new component classes + full breakpoint rules
+   ============================================================ */
+
+/* ── Section row header (title left + CTA button right) ─────── */
+.section-row-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ── Dhamma sermon card ─────────────────────────────────────── */
+.dhamma-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  box-shadow: var(--shadow-md);
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.dhamma-card__body { flex: 1; }
+
+.dhamma-card__btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.dhamma-card__icon {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, var(--gold-soft), var(--saffron-soft));
+  border: 2px solid var(--gold-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+/* ── Donation CTA card ──────────────────────────────────────── */
+.donation-cta-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: var(--shadow-lg);
+}
+
+.donation-cta-card__content {
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.donation-cta-card__btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.donation-cta-card__image {
+  position: relative;
+  min-height: 320px;
+}
+
+.donation-cta-card__image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--bg-card) 0%, transparent 30%);
+}
+
+/* ── Chief Thero two-col layout ─────────────────────────────── */
+.chief-thero-layout {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  box-shadow: var(--shadow-xl);
+  margin-top: 2rem;
+}
+
+.chief-thero-image-col {
+  position: relative;
+  min-height: 520px;
+}
+
+.chief-thero-content {
+  padding: 2.5rem;
+  overflow-y: auto;
+}
+
+.chief-thero-edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* ============================================================
+   1024px BREAKPOINT
+   ============================================================ */
+@media (max-width: 1024px) {
+  .container { padding: 0 1.25rem; }
+  .section { padding: 4rem 0; }
+  .section--lg { padding: 5rem 0; }
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .page-hero { padding: 7rem 0 4rem; }
+  .navbar__nav { display: none; }
+  .hamburger { display: flex; }
+  .breakdown-item__label { min-width: 140px; }
+  .bank-details { padding: 1.5rem; }
+  .bank-details__label { min-width: 110px; }
+
+  /* Chief thero shrinks to fit */
+  .chief-thero-layout { grid-template-columns: 300px 1fr; }
+  .chief-thero-image-col { min-height: 420px; }
+
+  /* Dhamma card icon hides early */
+  .dhamma-card { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem; }
+  .dhamma-card__icon { display: none; }
+}
+
+/* ============================================================
+   900px BREAKPOINT (chief thero stacks)
+   ============================================================ */
+@media (max-width: 900px) {
+  .chief-thero-layout { grid-template-columns: 1fr; }
+  .chief-thero-image-col { min-height: 320px; max-height: 420px; }
+  .chief-thero-edu-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+/* ============================================================
+   768px BREAKPOINT
+   ============================================================ */
+@media (max-width: 768px) {
+  .container { padding: 0 1rem; }
+
+  h1 { font-size: clamp(1.75rem, 7vw, 2.5rem); }
+  h2 { font-size: clamp(1.4rem, 5vw, 2rem); }
+  h3 { font-size: clamp(1.1rem, 4vw, 1.5rem); }
+
+  .section { padding: 3.5rem 0; }
+  .section--lg { padding: 4.5rem 0; }
+  .section-header { margin-bottom: 2.5rem; }
+
+  .page-hero { padding: 6rem 0 3.5rem; }
+  .page-hero__subtitle { font-size: 1rem; }
+
+  .grid--4,
+  .grid--3,
+  .grid--2 { grid-template-columns: 1fr; }
+
+  .content-split { grid-template-columns: 1fr; gap: 2rem; }
+  .content-split--reverse { direction: ltr; }
+
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .stat-card { padding: 1.5rem 0.75rem; }
+  .stat-card__number { font-size: 2rem; }
+
+  .hero__content { max-width: 100%; }
+  .hero__quote { display: none; }
+  .hero__ctas { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .hero__ctas .btn { width: 100%; justify-content: center; }
+  .hero__scroll-indicator { display: none; }
+
+  .footer { padding: 3.5rem 0 2rem; }
+  .footer__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer__bottom { flex-direction: column; text-align: center; gap: 0.75rem; }
+  .footer__newsletter-form { flex-direction: column; gap: 0.5rem; }
+  .footer__newsletter-btn { width: 100%; padding: 0.75rem; }
+
+  .event-card { grid-template-columns: auto 1fr; gap: 1rem; }
+  .event-card .btn { grid-column: 1 / -1; width: 100%; justify-content: center; }
+  .event-card__meta { flex-wrap: wrap; gap: 0.5rem; }
+
+  .gallery-grid { columns: 2 160px; column-gap: 0.75rem; }
+
+  .activity-item { padding: 1.25rem 0.75rem; }
+
+  .timeline { padding-left: 1.5rem; }
+  .timeline-item { padding-left: 1.5rem; padding-bottom: 2rem; }
+  .timeline-item::before { left: -1.5rem; }
+
+  .accordion-trigger { padding: 1rem 1.25rem; font-size: 0.95rem; }
+  .accordion-body { padding: 0 1.25rem 1rem; }
+
+  .calendar-view { font-size: 0.75rem; }
+  .calendar-day { min-height: 56px; padding: 0.3rem; }
+  .calendar-day-header { padding: 0.5rem 0.25rem; font-size: 0.65rem; }
+
+  .filter-tabs { gap: 0.35rem; }
+  .filter-tab { padding: 0.4rem 0.9rem; font-size: 0.8rem; }
+
+  .value-card { padding: 1.5rem; }
+
+  .contact-info-card { padding: 1.25rem; }
+  .contact-info-card__icon { width: 38px; height: 38px; font-size: 1rem; }
+
+  .breakdown-item { flex-wrap: wrap; }
+  .breakdown-item__label { min-width: unset; width: 100%; }
+  .breakdown-item__bar { width: 100%; }
+
+  .bank-details { padding: 1.25rem; }
+  .bank-details__row { flex-direction: column; gap: 0.25rem; }
+  .bank-details__label { min-width: unset; }
+
+  .map-container { height: 280px; }
+
+  .lightbox { padding: 1rem; }
+  .lightbox__img { max-height: 70vh; }
+
+  .search-bar { max-width: 100%; width: 100%; }
+
+  /* Section row header stacks */
+  .section-row-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .section-row-header .btn { align-self: flex-start; }
+
+  /* Dhamma card */
+  .dhamma-card { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.75rem; }
+  .dhamma-card__icon { display: none; }
+  .dhamma-card__btns { flex-direction: column; gap: 0.75rem; }
+  .dhamma-card__btns .btn { width: 100%; justify-content: center; }
+
+  /* Donation CTA card */
+  .donation-cta-card { grid-template-columns: 1fr; }
+  .donation-cta-card__content { padding: 2rem 1.75rem; }
+  .donation-cta-card__image { display: none; }
+  .donation-cta-card__btns { flex-direction: column; gap: 0.75rem; }
+  .donation-cta-card__btns .btn { width: 100%; justify-content: center; }
+
+  /* Chief thero */
+  .chief-thero-layout { grid-template-columns: 1fr; }
+  .chief-thero-image-col { min-height: 280px; max-height: 360px; }
+  .chief-thero-content { padding: 1.75rem; }
+  .chief-thero-edu-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+/* ============================================================
+   640px BREAKPOINT
+   ============================================================ */
+@media (max-width: 640px) {
+  .container { padding: 0 0.875rem; }
+
+  h1 { font-size: clamp(1.6rem, 8vw, 2.2rem); }
+  h2 { font-size: clamp(1.3rem, 6vw, 1.75rem); }
+
+  .section { padding: 3rem 0; }
+  .section--lg { padding: 4rem 0; }
+
+  .page-hero { padding: 5.5rem 0 3rem; }
+  .page-hero__title { font-size: clamp(1.5rem, 7vw, 2rem); }
+
+  .navbar__inner { height: 64px; }
+  .navbar__logo-text { display: none; }
+  .mobile-menu { top: 64px; }
+  .pt-nav { padding-top: 64px; }
+
+  .hero__title { font-size: clamp(1.75rem, 9vw, 2.75rem); }
+  .hero__tagline { font-size: 0.95rem; }
+  .hero__label { font-size: 0.7rem; }
+
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+
+  .event-card { grid-template-columns: 1fr; gap: 0.75rem; }
+  .event-card__date {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: left;
+    padding: 0.6rem 1rem;
+    width: fit-content;
+  }
+  .event-card__date-day { font-size: 1.25rem; }
+
+  .gallery-grid { columns: 1; }
+
+  /* Filter tabs — horizontal scroll on small screens */
+  .filter-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+  }
+  .filter-tabs::-webkit-scrollbar { display: none; }
+  .filter-tab { flex-shrink: 0; }
+
+  /* 8-activity grid stays 2 cols on phone */
+  .grid--4 { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+
+  .section-label::before,
+  .section-label::after { width: 16px; }
+
+  .value-card { padding: 1.25rem; }
+  .project-card__amounts { flex-direction: column; gap: 0.25rem; }
+
+  .accordion-trigger { padding: 1rem; font-size: 0.9rem; }
+  .calendar-day { min-height: 44px; }
+
+  .btn--lg { padding: 0.875rem 1.75rem; font-size: 0.95rem; }
+  .lang-btn { padding: 0.25rem 0.45rem; font-size: 0.7rem; }
+
+  .donation-cta-card__content { padding: 1.5rem 1.25rem; }
+  .chief-thero-content { padding: 1.25rem; }
+}
+
+/* ============================================================
+   480px BREAKPOINT
+   ============================================================ */
+@media (max-width: 480px) {
+  .container { padding: 0 0.75rem; }
+  h1 { font-size: clamp(1.5rem, 9vw, 2rem); }
+  .section { padding: 2.5rem 0; }
+  .gallery-grid { columns: 1; }
+  .filter-tab { padding: 0.35rem 0.75rem; font-size: 0.75rem; }
+  .footer { padding: 3rem 0 1.5rem; }
+  .footer__logo-name { font-size: 1.05rem; }
+  .map-container { height: 220px; }
+  .page-hero { padding: 5rem 0 2.5rem; }
+  .event-card { padding: 1rem; }
+  .hero__ctas .btn--lg { width: 100%; text-align: center; justify-content: center; }
+  .dhamma-card { padding: 1.25rem; }
+  .chief-thero-image-col { min-height: 220px; }
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print {
+  .navbar, .footer, .scroll-progress { display: none; }
+  .pt-nav { padding-top: 0; }
+}

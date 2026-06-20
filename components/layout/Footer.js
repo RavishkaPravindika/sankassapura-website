@@ -29,14 +29,13 @@ export default function Footer() {
                 borderRadius: '50%', display: 'flex', alignItems: 'center',
                 justifyContent: 'center', color: 'white', fontSize: '1.3rem', flexShrink: 0
               }} aria-hidden="true">☸</div>
-              <p className="footer__logo-name">Sankassapura Buddhist Temple</p>
+              <p className="footer__logo-name">Sri Sambudhdharaja Sankassapura Viharaya</p>
             </div>
             <p className="footer__desc">{t('footer.description')}</p>
             <div className="footer__social" aria-label="Social media links">
               {[
                 { icon: 'f', label: 'Facebook', href: '#' },
                 { icon: '▶', label: 'YouTube', href: '#' },
-                { icon: 'in', label: 'Instagram', href: '#' },
               ].map((s) => (
                 <a key={s.label} href={s.href} className="footer__social-btn" aria-label={s.label} rel="noopener noreferrer">
                   {s.icon}
@@ -94,9 +93,9 @@ export default function Footer() {
 
             {/* Contact snippet */}
             <div style={{ marginTop: '1.5rem', fontSize: '0.85rem', color: 'var(--footer-text)', lineHeight: 1.8 }}>
-              <p>📍 Musterstraße 42, 12345 Berlin</p>
-              <p>📞 +49 30 1234 5678</p>
-              <p>✉ info@sankassapura-temple.de</p>
+              <p>📍 Sri Sambudhdharaja Sankassapura Viharaya <br /> Galle Road <br /> Sri Lanka</p>
+              <p>📞 <a href="tel:+94718467250" style={{ color: 'var(--text-secondary)' }}>+94718467250</a></p>
+              <p>✉ <a href="mailto:info@sankassapuravihara.org" style={{ color: 'var(--text-secondary)' }}>info@sankassapuravihara.org</a></p>
             </div>
           </div>
         </div>

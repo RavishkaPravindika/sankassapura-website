@@ -177,10 +177,10 @@ export default function ContactPage() {
             <div className="map-container">
               <div className="map-placeholder">
                 <div className="map-placeholder__icon">📍</div>
-                <h3 style={{ fontFamily: 'Playfair Display, serif', marginBottom: '0.5rem' }}>Sankassapura Buddhist Temple</h3>
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Musterstraße 42, 12345 Berlin, Germany</p>
+                <h3 style={{ fontFamily: 'Playfair Display, serif', marginBottom: '0.5rem' }}>Sri Sambudhdharaja Sankassapura Viharaya</h3>
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Galle Road, Sri Lanka</p>
                 <a
-                  href="https://maps.google.com/?q=Berlin+Germany"
+                  href="https://maps.app.goo.gl/W2Tf4ekAnE3xfjYz5"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn--primary btn--sm"

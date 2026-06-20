@@ -56,8 +56,8 @@ export default function Navbar() {
               ☸
             </div>
             <div className="navbar__logo-text">
-              <span className="navbar__logo-name">Sankassapura</span>
-              <span className="navbar__logo-subtitle">Buddhist Temple</span>
+              <span className="navbar__logo-name">Sri Sambudhdharaja</span>
+              <span className="navbar__logo-subtitle">Sankassapura Viharaya</span>
             </div>
           </Link>
 

@@ -39,7 +39,7 @@ export default function HomePage() {
       {/* ── 1. HERO ─────────────────────────────────────────── */}
       <section className="hero" aria-label="Welcome hero section">
         <div className="hero__bg">
-          <Image src="/images/hero_temple.png" alt="Sankassapura Buddhist Temple at sunrise" fill priority style={{ objectFit: 'cover' }} />
+          <Image src="/images/hero_temple.png" alt="Sri Sambodhiraja Sankassapura Viharaya at sunrise" fill priority style={{ objectFit: 'cover' }} />
         </div>
         <div className="hero__overlay" aria-hidden="true" />
         <div className="container">
@@ -112,9 +112,9 @@ export default function HomePage() {
           </SectionWrapper>
           <div className="grid--3">
             {[
-              { name: 'Ven. Dhammāloka Thero', role: t('therosPreview.chiefThero'), img: '/images/thero_chief.png', delay: 0 },
-              { name: 'Ven. Sumedha Thero', role: t('therosPreview.residentThero'), img: null, delay: 100 },
-              { name: 'Ven. Ānanda Thero', role: t('therosPreview.residentThero'), img: null, delay: 200 },
+              { name: 'Ven. Ariya Wimala Thissa Thero', role: t('therosPreview.chiefThero'), img: '/images/thero_chief.png', delay: 0 },
+              { name: 'Ven. Ariya Wansha Thero', role: t('therosPreview.residentThero'), img: null, delay: 100 },
+              { name: 'Ven. Dhamma Dinna Thero', role: t('therosPreview.residentThero'), img: null, delay: 200 },
             ].map((thero, i) => (
               <SectionWrapper key={i} delay={thero.delay}>
                 <div className="thero-card">
@@ -239,7 +239,7 @@ export default function HomePage() {
                   "The Four Noble Truths — A Path to Liberation"
                 </h3>
                 <p style={{ marginBottom: '1.5rem', fontSize: '0.95rem' }}>
-                  Ven. Dhammāloka Thero · 45 min · English & Sinhala
+                  Ven. Ariya Wimala Thissa Thero · 45 min · English & Sinhala
                 </p>
                 <div style={{ display: 'flex', gap: '1rem' }}>
                   <button className="btn btn--primary">{t('dhamma.listenNow')}</button>
@@ -350,19 +350,32 @@ export default function HomePage() {
               <h2 className="section-title">{t('contactPreview.title')}</h2>
             </div>
           </SectionWrapper>
-          <div className="grid--4">
+          <div className="grid--3">
             {[
-              { icon: '📍', label: t('contactPreview.address'), value: 'Musterstraße 42\n12345 Berlin, Germany' },
-              { icon: '📞', label: t('contactPreview.phone'), value: '+49 30 1234 5678' },
-              { icon: '✉', label: t('contactPreview.email'), value: 'info@sankassapura-temple.de' },
+              { icon: '📞', label: t('contactPreview.phone'), value: '+94718467250', link: 'tel:+94718467250' },
+              { icon: '✉', label: t('contactPreview.email'), value: 'info@sankassapuravihara.org', link: 'mailto:info@sankassapuravihara.org' },
               { icon: '🕐', label: t('contactPreview.hours'), value: t('contactPreview.hoursValue') },
+              { icon: '📍', label: t('contactPreview.address'), value: 'Sri Sambudhdharaja Sankassapura Viharaya\nGalle Road\nSri Lanka' },
             ].map((item, i) => (
               <SectionWrapper key={i} delay={i * 70}>
                 <div className="contact-info-card">
                   <div className="contact-info-card__icon" aria-hidden="true">{item.icon}</div>
                   <div>
                     <div className="contact-info-card__label">{item.label}</div>
-                    <div className="contact-info-card__value">{item.value}</div>
+                    <div className="contact-info-card__value">
+                      {item.link ? (
+                        <a
+                          style={{ color: 'var(--text-primary)' }}
+                          href={item.link}
+                          target={item.link.startsWith('http') ? '_blank' : undefined}
+                          rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        >
+                          {item.value}
+                        </a>
+                      ) : (
+                        item.value
+                      )}
+                    </div>
                   </div>
                 </div>
               </SectionWrapper>

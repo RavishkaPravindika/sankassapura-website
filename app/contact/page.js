@@ -177,7 +177,7 @@ export default function ContactPage() {
             <div className="map-container">
               <div className="map-placeholder">
                 <div className="map-placeholder__icon">📍</div>
-                <h3 style={{ fontFamily: 'Playfair Display, serif', marginBottom: '0.5rem' }}>Sri Sambudhdharaja Sankassapura Viharaya</h3>
+                <h3 style={{ fontFamily: 'Playfair Display, serif', marginBottom: '0.5rem' }}>Sankassapura Sri Sambuddharaja Buddhist Mansion</h3>
                 <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Galle Road, Sri Lanka</p>
                 <a
                   href="https://maps.app.goo.gl/W2Tf4ekAnE3xfjYz5"

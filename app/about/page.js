@@ -59,7 +59,7 @@ export default function AboutPage() {
                 <div className="lotus-divider"><span className="lotus-divider-icon">🪷</span></div>
                 <p style={{ marginBottom: '1.25rem' }}>{t('about.intro.p1')}</p>
                 <p style={{ marginBottom: '2rem' }}>{t('about.intro.p2')}</p>
-                <Link href="/contact" className="btn btn--primary">{t('common.learnMore')}</Link>
+                {/* <Link href="/contact" className="btn btn--primary">{t('common.learnMore')}</Link> */}
               </div>
               <div className="content-image">
                 <Image src="/images/about_temple.png" alt="Temple interior" width={600} height={480}
@@ -72,10 +72,10 @@ export default function AboutPage() {
           <SectionWrapper delay={100} style={{ marginTop: '5rem' }}>
             <div className="stats-grid">
               {[
-                { number: '1990', label: 'Year Founded' },
-                { number: '35+', label: 'Years of Service' },
-                { number: '500+', label: 'Families Served' },
-                { number: '20+', label: 'Monthly Programs' },
+                { number: '1908', label: 'Year Founded' },
+                { number: '107+', label: 'Years of Service' },
+                { number: '2000+', label: 'Families Served' },
+                { number: '5+', label: 'Monthly Programs' },
               ].map((s, i) => (
                 <div key={i} className="stat-card">
                   <div className="stat-card__number">{s.number}</div>
@@ -190,7 +190,7 @@ export default function AboutPage() {
       </section>
 
       {/* TIMELINE */}
-      <section className="section" style={{ background: 'var(--bg-elevated)' }}>
+      {/* <section className="section" style={{ background: 'var(--bg-elevated)' }}>
         <div className="container">
           <SectionWrapper>
             <div className="section-header">
@@ -213,7 +213,7 @@ export default function AboutPage() {
             <Link href="/history" className="btn btn--primary">Read Our Full History</Link>
           </SectionWrapper>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

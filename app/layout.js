@@ -7,14 +7,14 @@ import Footer from '@/components/layout/Footer';
 import ScrollProgress from '@/components/ui/ScrollProgress';
 
 export const metadata = {
-  title: 'Sankassapura Buddhist Temple | Berlin, Germany',
+  title: 'Sankassapura Sri Sambuddharaja Buddhist Mansion',
   description:
-    'Sankassapura Buddhist Temple — A sacred sanctuary of peace, wisdom, and compassion in Berlin, Germany. Offering Dhamma teachings, meditation programs, Poya observances, and cultural events for the Sri Lankan Buddhist community.',
+    'Sankassapura Sri Sambuddharaja Buddhist Mansion',
   keywords:
-    'Buddhist temple Berlin, Sri Lankan temple Germany, Theravada Buddhism, meditation classes Berlin, Dhamma school, Buddhist events Germany',
+    'Sankassapura Sri Sambuddharaja Buddhist Mansion, Theravada Buddhism, meditation classes London, Dhamma school.',
   openGraph: {
-    title: 'Sankassapura Buddhist Temple',
-    description: 'A sacred sanctuary of peace, wisdom and compassion in Berlin, Germany.',
+    title: 'Sankassapura Sri Sambuddharaja Buddhist Mansion',
+    description: 'Sankassapura Sri Sambuddharaja Buddhist Mansion',
     type: 'website',
   },
 };

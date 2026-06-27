@@ -38,7 +38,7 @@ export default function HomePage() {
       {/* ── 1. HERO ─────────────────────────────────────────── */}
       <section className="hero" aria-label="Welcome hero section">
         <div className="hero__bg">
-          <Image src="/images/hero_temple.png" alt="Sri Sambodhiraja Sankassapura Viharaya at sunrise" fill priority style={{ objectFit: 'cover' }} />
+          <Image src="/images/hero_temple.png" alt="Sankassapura Sri Sambuddharaja Buddhist Mansion at sunrise" fill priority style={{ objectFit: 'cover' }} />
         </div>
         <div className="hero__overlay" aria-hidden="true" />
         <div className="container">
@@ -84,10 +84,10 @@ export default function HomePage() {
           <SectionWrapper delay={100} style={{ marginTop: '4rem' }}>
             <div className="stats-grid">
               {[
-                { number: '1990', label: t('aboutPreview.stats.founded') },
+                { number: '1908', label: t('aboutPreview.stats.founded') },
                 { number: '4', label: t('aboutPreview.stats.monks') },
-                { number: '20+', label: t('aboutPreview.stats.programs') },
-                { number: '500+', label: t('aboutPreview.stats.devotees') },
+                { number: '5+', label: t('aboutPreview.stats.programs') },
+                { number: '2000+', label: t('aboutPreview.stats.devotees') },
               ].map((s, i) => (
                 <div key={i} className="stat-card">
                   <div className="stat-card__number">{s.number}</div>
@@ -110,9 +110,9 @@ export default function HomePage() {
           </SectionWrapper>
           <div className="grid--3">
             {[
-              { name: 'Ven. Ariya Wimala Thissa Thero', role: t('therosPreview.chiefThero'), img: '/images/thero_chief.png', delay: 0 },
-              { name: 'Ven. Ariya Wansha Thero', role: t('therosPreview.residentThero'), img: null, delay: 100 },
-              { name: 'Ven. Dhamma Dinna Thero', role: t('therosPreview.residentThero'), img: null, delay: 200 },
+              { name: 'Ven. Ariya Wimala Thissa Thero', role: t('therosPreview.chiefThero'), img: '/images/Ariyawimala_Thero.png', delay: 0 },
+              { name: 'Ven. Ariya Wansha Thero', role: t('therosPreview.residentThero'), img: '/images/Ariyawansha_Thero.png', delay: 100 },
+              { name: 'Ven. DhammaDinna Thero', role: t('therosPreview.residentThero'), img: '/images/Dhammadinna_Thero.png', delay: 200 },
             ].map((thero, i) => (
               <SectionWrapper key={i} delay={thero.delay}>
                 <div className="thero-card">
@@ -141,16 +141,16 @@ export default function HomePage() {
           <SectionWrapper>
             <div className="content-split content-split--reverse">
               <div className="content-image">
-                <Image src="/images/history_temple.png" alt="Ancient Sri Lankan temple ruins" width={600} height={420} style={{ objectFit: 'cover', width: '100%', height: '100%', borderRadius: 12 }} />
+                <Image src="/images/Old_temple.jpeg" alt="Ancient Sri Lankan temple ruins" width={600} height={420} style={{ objectFit: 'cover', width: '100%', height: '100%', borderRadius: 12 }} />
               </div>
               <div>
                 <p className="section-label">{t('historyPreview.sectionLabel')}</p>
                 <h2 className="section-title">{t('historyPreview.title')}</h2>
                 <div className="lotus-divider"><span className="lotus-divider-icon">🌿</span></div>
                 <p style={{ marginBottom: '2rem' }}>{t('historyPreview.description')}</p>
-                <div className="timeline" style={{ marginBottom: '2rem' }}>
+                {/* <div className="timeline" style={{ marginBottom: '2rem' }}>
                   {[
-                    { year: '1985', label: 'First Dhamma gatherings' },
+                    { year: '1908', label: 'First Dhamma gatherings' },
                     { year: '1990', label: 'Temple Committee established' },
                     { year: '2000', label: 'Official temple consecration' },
                     { year: '2010', label: 'New temple complex opened' },
@@ -160,7 +160,7 @@ export default function HomePage() {
                       <div className="timeline-item__desc">{e.label}</div>
                     </div>
                   ))}
-                </div>
+                </div> */}
                 <Link href="/history" className="btn btn--primary">{t('historyPreview.viewHistory')}</Link>
               </div>
             </div>
@@ -221,14 +221,14 @@ export default function HomePage() {
                   "The Four Noble Truths — A Path to Liberation"
                 </h3>
                 <p style={{ marginBottom: '1.5rem', fontSize: '0.95rem' }}>
-                  Ven. Ariya Wimala Thissa Thero · 45 min · English &amp; Sinhala
+                  Ven. Ariya Wimala Thissa Thero
                 </p>
-                <div className="dhamma-card__btns">
+                {/* <div className="dhamma-card__btns">
                   <button className="btn btn--primary">{t('dhamma.listenNow')}</button>
                   <Link href="/about" className="btn btn--ghost">{t('dhamma.readDhamma')}</Link>
-                </div>
+                </div> */}
               </div>
-              <div className="dhamma-card__icon" aria-hidden="true">🔊</div>
+              {/* <div className="dhamma-card__icon" aria-hidden="true">🔊</div> */}
             </div>
           </SectionWrapper>
         </div>
@@ -320,7 +320,7 @@ export default function HomePage() {
               { icon: '📞', label: t('contactPreview.phone'), value: '+94718467250', link: 'tel:+94718467250' },
               { icon: '✉', label: t('contactPreview.email'), value: 'info@sankassapuravihara.org', link: 'mailto:info@sankassapuravihara.org' },
               { icon: '🕐', label: t('contactPreview.hours'), value: t('contactPreview.hoursValue') },
-              { icon: '📍', label: t('contactPreview.address'), value: 'Sri Sambudhdharaja Sankassapura Viharaya\nGalle Road\nSri Lanka' },
+              { icon: '📍', label: t('contactPreview.address'), value: 'Sankassapura Sri Sambuddharaja Buddhist Mansion\nGalle Road\nSri Lanka' },
             ].map((item, i) => (
               <SectionWrapper key={i} delay={i * 70}>
                 <div className="contact-info-card">

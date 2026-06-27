@@ -51,13 +51,13 @@ export default function Navbar() {
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} role="navigation" aria-label="Main navigation">
         <div className="container navbar__inner">
           {/* Logo */}
-          <Link href="/" className="navbar__logo" aria-label="Sankassapura Buddhist Temple - Home">
-            <div className="navbar__logo-icon" aria-hidden="true">
-              ☸
+          <Link href="/" className="navbar__logo" aria-label="Sankassapura Sri Sambuddharaja Buddhist Mansion - Home">
+            <div className='logo'>
+              <img src="/images/sankassapura_logo.png" alt="Sankassapura Sri Sambuddharaja Buddhist Mansion" />
             </div>
             <div className="navbar__logo-text">
-              <span className="navbar__logo-name">Sri Sambudhdharaja</span>
-              <span className="navbar__logo-subtitle">Sankassapura Viharaya</span>
+              <span className="navbar__logo-name">Sankassapura Sri Sambuddharaja</span>
+              <span className="navbar__logo-subtitle">Buddhist Mansion</span>
             </div>
           </Link>
 

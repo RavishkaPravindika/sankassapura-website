@@ -10,6 +10,11 @@ export default function TherosPage() {
   const [expanded, setExpanded] = useState(null);
   const chiefEdu = t('theros.chief.educationItems');
   const chiefAchv = t('theros.chief.achievementItems');
+  const residentImages = [
+    '/images/Ariyawansha_Thero.png',
+    '/images/Dhammadinna_Thero.png',
+    '/images/Ariyananda_Thero.png'
+  ];
 
   return (
     <div className="pt-nav">
@@ -32,7 +37,7 @@ export default function TherosPage() {
             <div className="chief-thero-layout">
               {/* Image side */}
               <div className="chief-thero-image-col">
-                <Image src="/images/thero_chief.png" alt={t('theros.chief.name')} fill
+                <Image src="/images/Ariyawimala_Thero.png" alt={t('theros.chief.name')} fill
                   style={{ objectFit: 'cover', objectPosition: 'top' }} />
                 <div style={{
                   position: 'absolute', bottom: 0, left: 0, right: 0,
@@ -109,11 +114,18 @@ export default function TherosPage() {
                   onClick={() => setExpanded(expanded === i ? null : i)}
                 >
                   <div style={{
+                    position: 'relative',
                     background: 'linear-gradient(135deg, var(--gold-soft) 0%, var(--saffron-soft) 100%)',
                     aspectRatio: '4/3',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: '4.5rem',
-                  }}>🧘</div>
+                    overflow: 'hidden'
+                  }}>
+                    <Image 
+                      src={residentImages[i]} 
+                      alt={monk.name} 
+                      fill
+                      style={{ objectFit: 'cover', objectPosition: 'top' }} 
+                    />
+                  </div>
 
                   <div className="card__body">
                     <p style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.4rem' }}>

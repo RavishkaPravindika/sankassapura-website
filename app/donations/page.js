@@ -135,10 +135,10 @@ export default function DonationsPage() {
                 </div>
                 <div className="bank-details">
                   {[
-                    { label: ways.bank.accountName, value: 'Sankassapura Buddhist Temple e.V.' },
-                    { label: ways.bank.bankName, value: 'Sparkasse Berlin' },
-                    { label: ways.bank.iban, value: 'DE89 1002 0030 1234 5678 90' },
-                    { label: ways.bank.bic, value: 'BELADEBEXXX' },
+                    { label: ways.bank.accountName, value: 'Sankassapura Sri Sambuddharaja Buddhist Mansion' },
+                    { label: ways.bank.bankName, value: 'BOC' },
+                    { label: ways.bank.iban, value: '############' },
+                    { label: ways.bank.bic, value: 'Aluthgama' },
                     { label: ways.bank.reference, value: ways.bank.referenceValue },
                   ].map((row, i) => (
                     <div key={i} className="bank-details__row">
@@ -185,7 +185,7 @@ export default function DonationsPage() {
                 <h2 className="section-title">{t('donations.transparency.title')}</h2>
                 <div className="lotus-divider"><span className="lotus-divider-icon">⚖️</span></div>
                 <p style={{ marginBottom: '2rem' }}>{t('donations.transparency.p1')}</p>
-                <a href="#" className="btn btn--secondary">Download 2024 Annual Report</a>
+                {/* <a href="#" className="btn btn--secondary">Download 2024 Annual Report</a> */}
               </div>
               <div>
                 <h4 style={{ fontFamily: 'Playfair Display, serif', marginBottom: '1.5rem', color: 'var(--text-primary)' }}>

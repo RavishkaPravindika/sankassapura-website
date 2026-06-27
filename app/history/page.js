@@ -59,19 +59,19 @@ export default function HistoryPage() {
       </section>
 
       {/* INTERACTIVE TIMELINE */}
-      <section className="section" style={{ background: 'var(--bg-elevated)' }}>
-        <div className="container">
-          <SectionWrapper>
+      {/* <section className="section" style={{ background: 'var(--bg-elevated)' }}>
+        <div className="container"> */}
+          {/* <SectionWrapper>
             <div className="section-header">
               <p className="section-label">{t('history.timeline.label')}</p>
               <h2 className="section-title">{t('history.timeline.title')}</h2>
             </div>
-          </SectionWrapper>
+          </SectionWrapper> */}
 
           {/* Alternating timeline */}
-          <div style={{ position: 'relative', maxWidth: 900, margin: '0 auto' }}>
+          {/* <div style={{ position: 'relative', maxWidth: 900, margin: '0 auto' }}> */}
             {/* Centre line */}
-            <div style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: 2, background: 'linear-gradient(to bottom, var(--gold), transparent)', transform: 'translateX(-50%)', display: 'none' }} className="timeline-centre-line" />
+            {/* <div style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: 2, background: 'linear-gradient(to bottom, var(--gold), transparent)', transform: 'translateX(-50%)', display: 'none' }} className="timeline-centre-line" />
 
             {events.map((ev, i) => {
               const isLeft = i % 2 === 0;
@@ -83,9 +83,9 @@ export default function HistoryPage() {
                     gap: '1.5rem',
                     alignItems: 'center',
                     marginBottom: '2rem',
-                  }}>
+                  }}> */}
                     {/* Left side */}
-                    {isLeft ? (
+                    {/* {isLeft ? (
                       <div style={{
                         background: 'var(--bg-card)',
                         border: '1px solid var(--border)',
@@ -99,10 +99,10 @@ export default function HistoryPage() {
                         <div className="timeline-item__title" style={{ marginBottom: '0.5rem' }}>{ev.title}</div>
                         <div className="timeline-item__desc">{ev.desc}</div>
                       </div>
-                    ) : <div />}
+                    ) : <div />} */}
 
                     {/* Centre dot */}
-                    <div style={{
+                    {/* <div style={{
                       width: 48, height: 48,
                       background: 'linear-gradient(135deg, var(--gold), var(--saffron))',
                       borderRadius: '50%',
@@ -112,10 +112,10 @@ export default function HistoryPage() {
                       zIndex: 1,
                     }}>
                       {MILESTONE_ICONS[i]}
-                    </div>
+                    </div> */}
 
                     {/* Right side */}
-                    {!isLeft ? (
+                    {/* {!isLeft ? (
                       <div style={{
                         background: 'var(--bg-card)',
                         border: '1px solid var(--border)',
@@ -135,7 +135,7 @@ export default function HistoryPage() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* SACRED RELICS */}
       <section className="section">

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import SectionWrapper from '@/components/ui/SectionWrapper';
+import { useTheme } from '@/context/ThemeContext';
 
 const UPCOMING_EVENTS = [
   { day: '12', month: 'Jul', category: 'Poya Day', title: 'Esala Full Moon Poya Day', time: '6:00 AM', venue: 'Main Shrine Hall' },
@@ -32,20 +33,42 @@ const GALLERY_IMAGES = [
 
 export default function HomePage() {
   const { t } = useLanguage();
+  const { theme } = useTheme();
 
   return (
     <>
       {/* ── 1. HERO ─────────────────────────────────────────── */}
       <section className="hero" aria-label="Welcome hero section">
         <div className="hero__bg">
-          <Image src="/images/hero_temple.png" alt="Sankassapura Sri Sambuddharaja Buddhist Mansion at sunrise" fill priority style={{ objectFit: 'cover' }} />
+          {/* Light mode image — hidden in dark mode via CSS */}
+          <Image
+            src="/images/hero_light.png"
+            alt="Sankassapura Sri Sambuddharaja Buddhist Mansion at sunrise"
+            fill
+            priority
+            className="hero__bg-img hero__bg-img--light"
+            style={{ objectFit: 'cover', objectPosition: 'right top' }}
+          />
+          {/* Dark mode image — hidden in light mode via CSS */}
+          <Image
+            src="/images/hero_dark.png"
+            alt="Sankassapura Buddha statue in meditation"
+            fill
+            priority
+            className="hero__bg-img hero__bg-img--dark"
+            style={{ objectFit: 'cover', objectPosition: 'right center' }}
+          />
         </div>
         <div className="hero__overlay" aria-hidden="true" />
         <div className="container">
           <div className="hero__content">
             <div className="hero__label">☸ &nbsp; Theravāda Buddhist Temple &nbsp; ☸</div>
             <p className="hero__welcome">{t('hero.welcome')}</p>
-            <h1 className="hero__title">{t('hero.templeName')}</h1>
+            <h1 className="hero__title">
+              <span className="hero__title-line">Sankassapura</span>
+              <span className="hero__title-line">Sri Sambuddharaja</span>
+              <span className="hero__title-line">Buddhist Mansion</span>
+            </h1>
             <p className="hero__tagline">{t('hero.tagline')}</p>
             <blockquote className="hero__quote">
               <p>{t('hero.quote')}</p>

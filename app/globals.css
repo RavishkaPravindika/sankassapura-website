@@ -2192,6 +2192,327 @@ img {
 .pt-nav { padding-top: 72px; }
 
 /* ============================================================
+   HASTHA MUDRA PAGE
+   ============================================================ */
+
+/* Symbol icon row under intro */
+.mudra-symbol-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.mudra-symbol-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold-border);
+  background: var(--bg-card);
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.mudra-symbol-item:hover {
+  border-color: var(--gold);
+  background: var(--gold-soft);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-gold);
+}
+
+.mudra-symbol-item__icon { font-size: 1.4rem; line-height: 1; }
+.mudra-symbol-item__num {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Two-column alternating layout */
+.mudra-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.mudra-layout--reverse {
+  direction: rtl;
+}
+
+.mudra-layout--reverse > * {
+  direction: ltr;
+}
+
+/* Image side */
+.mudra-image-col { position: relative; }
+
+.mudra-image-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mudra-image-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--gold);
+  opacity: 0.08;
+  position: absolute;
+  top: -1.5rem;
+  left: -0.5rem;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.mudra-image-frame {
+  position: relative;
+  z-index: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  box-shadow: var(--shadow-lg), 0 0 0 6px var(--gold-soft);
+  width: 100%;
+  max-width: 460px;
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.mudra-image-frame:hover {
+  box-shadow: var(--shadow-xl), 0 0 0 8px var(--gold-soft), var(--shadow-gold);
+  transform: translateY(-4px);
+}
+
+.mudra-image-caption {
+  margin-top: 1.1rem;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+/* Content side */
+.mudra-content-col { display: flex; flex-direction: column; }
+
+.mudra-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  background: var(--gold-soft);
+  border: 1px solid var(--gold-border);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: 'Inter', sans-serif;
+  width: fit-content;
+  margin-bottom: 1.1rem;
+}
+
+.mudra-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.mudra-subtitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 0.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.mudra-pali {
+  font-family: 'Noto Sans Sinhala', 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.mudra-description {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* Key symbols list */
+.mudra-symbols {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 1.5rem 1.75rem;
+}
+
+.mudra-symbols__label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 0.9rem;
+}
+
+.mudra-symbols__list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+
+.mudra-symbols__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.mudra-symbols__bullet {
+  color: var(--gold);
+  font-size: 0.55rem;
+  flex-shrink: 0;
+}
+
+/* Closing summary grid */
+.mudra-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  margin: 2.5rem 0;
+}
+
+.mudra-summary-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.mudra-summary-card:hover {
+  border-color: var(--gold-border);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.mudra-summary-card__icon { font-size: 2rem; margin-bottom: 0.75rem; }
+
+.mudra-summary-card__theme {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+}
+
+.mudra-summary-card__desc {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* Closing quote */
+.mudra-closing-quote {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--gold-border);
+  border-radius: 12px;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 5vw, 3rem);
+  margin-top: 2.5rem;
+}
+
+.mudra-closing-quote__mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  color: var(--gold);
+  opacity: 0.2;
+  position: absolute;
+  top: 0.5rem;
+  left: 1.5rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.mudra-closing-quote__text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.9;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.mudra-closing-quote__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Responsive: tablet ────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .mudra-layout { gap: 3rem; }
+  .mudra-summary-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 860px) {
+  .mudra-summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Responsive: mobile ────────────────────────────────────── */
+@media (max-width: 768px) {
+  .mudra-layout,
+  .mudra-layout--reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 2rem;
+  }
+
+  .mudra-layout--reverse > * { direction: ltr; }
+
+  .mudra-image-frame { max-width: 100%; }
+
+  .mudra-summary-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+  .mudra-image-number { font-size: 3.5rem; }
+}
+
+@media (max-width: 480px) {
+  .mudra-summary-grid { grid-template-columns: 1fr; }
+  .mudra-symbol-row { gap: 0.75rem; }
+  .mudra-symbol-item { width: 52px; height: 52px; }
+  .mudra-symbol-item__icon { font-size: 1.1rem; }
+}
+
+/* ============================================================
    SCROLLBAR
    ============================================================ */
 

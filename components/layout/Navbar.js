@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { key: 'theros', href: '/theros' },
   { key: 'events', href: '/events' },
   { key: 'gallery', href: '/gallery' },
+  { key: 'hasthamudra', href: '/hastha-mudra' },
   { key: 'donations', href: '/donations' },
   { key: 'contact', href: '/contact' },
 ];

@@ -8,6 +8,7 @@ export default function TherosPage() {
   const { t } = useLanguage();
   const residents = t('theros.residents.monks');
   const [expanded, setExpanded] = useState(null);
+  const [showFullBio, setShowFullBio] = useState(false);
   const chiefEdu = t('theros.chief.educationItems');
   const chiefAchv = t('theros.chief.achievementItems');
   const residentImages = [
@@ -34,9 +35,9 @@ export default function TherosPage() {
             <p className="section-label" style={{ textAlign: 'center', justifyContent: 'center' }}>{t('theros.chief.label')}</p>
           </SectionWrapper>
           <SectionWrapper delay={80}>
-            <div className="chief-thero-layout">
+            <div className={'chief-thero-layout ' + (showFullBio ? 'bio-open' : '')}>
               {/* Image side */}
-              <div className="chief-thero-image-col">
+              <div className={'chief-thero-image-col ' + (showFullBio ? 'bio-open' : '')}>
                 <Image src="/images/Ariyawimala_Thero.png" alt={t('theros.chief.name')} fill
                   style={{ objectFit: 'cover', objectPosition: 'top' }} />
                 <div style={{
@@ -50,48 +51,42 @@ export default function TherosPage() {
 
               {/* Content side */}
               <div className="chief-thero-content">
-                <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.2rem, 3vw, 1.5rem)', marginBottom: '0.5rem', lineHeight: 1.3 }}>
+                <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.1rem, 2.5vw, 1.4rem)', marginBottom: '0.35rem', lineHeight: 1.3 }}>
                   {t('theros.chief.name')}
                 </h2>
-                <p style={{ color: 'var(--gold)', fontWeight: 600, fontSize: '0.85rem', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '1.5rem' }}>
+                <p style={{ color: 'var(--gold)', fontWeight: 600, fontSize: '0.8rem', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>
                   {t('theros.chief.title')}
                 </p>
-                <p style={{ marginBottom: '1rem' }}>{t('theros.chief.bio1')}</p>
-                <p style={{ marginBottom: '1rem' }}>{t('theros.chief.bio2')}</p>
-                <p style={{ marginBottom: '1.75rem' }}>{t('theros.chief.bio3')}</p>
 
-                <blockquote style={{ borderLeft: '3px solid var(--gold)', paddingLeft: '1.25rem', marginBottom: '2rem' }}>
-                  <p style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontSize: '1rem', color: 'var(--text-primary)', marginBottom: 0 }}>
+                {/* Always-visible: first two paragraphs */}
+                <p style={{ marginBottom: '0.85rem', fontSize: '0.9rem' }}>{t('theros.chief.bio1')}</p>
+                <p style={{ marginBottom: '0.85rem', fontSize: '0.9rem' }}>{t('theros.chief.bio2')}</p>
+
+                {/* Collapsible: paragraphs 3-8 + quote */}
+                <div className={'chief-thero-bio-extra ' + (showFullBio ? 'is-open' : '')}>
+                  <p style={{ marginBottom: '0.85rem', fontSize: '0.9rem' }}>{t('theros.chief.bio3')}</p>
+                  <p style={{ marginBottom: '0.85rem', fontSize: '0.9rem' }}>{t('theros.chief.bio4')}</p>
+                  <p style={{ marginBottom: '0.85rem', fontSize: '0.9rem' }}>{t('theros.chief.bio5')}</p>
+                  <p style={{ marginBottom: '0.85rem', fontSize: '0.9rem' }}>{t('theros.chief.bio6')}</p>
+                  <p style={{ marginBottom: '0.85rem', fontSize: '0.9rem' }}>{t('theros.chief.bio7')}</p>
+                  <p style={{ marginBottom: '0.85rem', fontSize: '0.9rem' }}>{t('theros.chief.bio8')}</p>
+                </div>
+
+                {/* Read more / less toggle */}
+                <button
+                  onClick={() => setShowFullBio(!showFullBio)}
+                  className="chief-thero-read-more"
+                  aria-expanded={showFullBio}
+                >
+                  {showFullBio ? 'Show less ↑' : 'Read full biography ↓'}
+                </button>
+
+                {/* Quote */}
+                <blockquote className="chief-thero-quote">
+                  <p style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontSize: '0.95rem', color: 'var(--text-primary)', marginBottom: 0, lineHeight: 1.7 }}>
                     {t('theros.chief.quote')}
                   </p>
                 </blockquote>
-
-                <div className="chief-thero-edu-grid">
-                  <div>
-                    <h4 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--gold)' }}>
-                      {t('theros.chief.education')}
-                    </h4>
-                    <ul style={{ listStyle: 'none' }}>
-                      {chiefEdu.map((item, i) => (
-                        <li key={i} style={{ display: 'flex', gap: '0.5rem', fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>
-                          <span style={{ color: 'var(--gold)', flexShrink: 0 }}>◆</span> {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1rem', marginBottom: '0.75rem', color: 'var(--gold)' }}>
-                      {t('theros.chief.achievements')}
-                    </h4>
-                    <ul style={{ listStyle: 'none' }}>
-                      {chiefAchv.map((item, i) => (
-                        <li key={i} style={{ display: 'flex', gap: '0.5rem', fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>
-                          <span style={{ color: 'var(--gold)', flexShrink: 0 }}>✦</span> {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
               </div>
             </div>
           </SectionWrapper>

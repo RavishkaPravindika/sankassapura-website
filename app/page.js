@@ -99,7 +99,13 @@ export default function HomePage() {
                 <Link href="/about" className="btn btn--primary">{t('aboutPreview.learnMore')}</Link>
               </div>
               <div className="content-image">
-                <Image src="/images/about_temple.png" alt="Monk meditating under Bodhi tree" width={600} height={450} style={{ objectFit: 'cover', width: '100%', height: '100%', borderRadius: 12 }} />
+                <Image 
+                  src={theme === 'dark' ? "/images/Main_Statue_dark.png" : "/images/Main_Statue_light.jpeg"} 
+                  alt="Main Statue" 
+                  width={600} 
+                  height={450} 
+                  style={{ objectFit: 'cover', width: '100%', height: '100%', borderRadius: 12 }} 
+                />
               </div>
             </div>
           </SectionWrapper>
@@ -296,9 +302,9 @@ export default function HomePage() {
               {GALLERY_IMAGES.map((img, i) => (
                 <div key={i} className="gallery-item">
                   <Image src={img.src} alt={img.alt} width={500} height={350} style={{ objectFit: 'cover', width: '100%', height: 'auto' }} />
-                  <div className="gallery-item__overlay">
+                  {/* <div className="gallery-item__overlay">
                     <span className="gallery-item__icon">🔍</span>
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>

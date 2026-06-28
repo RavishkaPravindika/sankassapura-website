@@ -91,19 +91,91 @@
   border-radius: 16px;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 380px 1fr;
+  grid-template-columns: 340px 1fr;
   box-shadow: var(--shadow-xl);
   margin-top: 2rem;
+  /* Smooth border/shadow transition when expanding */
+  transition: box-shadow 0.4s ease;
+  align-items: stretch;
+}
+
+/* When bio is expanded: let content grow freely */
+.chief-thero-layout.bio-open {
+  overflow: visible;
+  align-items: start;
+  box-shadow: var(--shadow-xl), 0 0 0 2px var(--gold-border);
 }
 
 .chief-thero-image-col {
   position: relative;
-  min-height: 520px;
+  min-height: 460px;
+  /* Clip the image within the rounded card */
+  border-radius: 16px 0 0 16px;
+  overflow: hidden;
+}
+
+/* Sticky image when bio is open — stays in view as user reads */
+.chief-thero-image-col.bio-open {
+  position: sticky;
+  top: 88px;          /* clears the navbar */
+  min-height: 460px;
+  max-height: calc(100vh - 100px);
+  border-radius: 16px 0 0 16px;
+  overflow: hidden;
+  align-self: start;
 }
 
 .chief-thero-content {
-  padding: 2.5rem;
-  overflow-y: auto;
+  padding: 2rem 2.25rem;
+  overflow-y: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Collapsible bio extra paragraphs */
+.chief-thero-bio-extra {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.55s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+  opacity: 0;
+}
+
+.chief-thero-bio-extra.is-open {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+/* Read more / less button */
+.chief-thero-read-more {
+  background: none;
+  border: 1.5px solid var(--gold-border);
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.45rem 1rem;
+  margin: 0.75rem 0 1.25rem;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  letter-spacing: 0.04em;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.chief-thero-read-more:hover {
+  background: var(--gold-soft);
+  border-color: var(--gold);
+}
+
+/* Quote block */
+.chief-thero-quote {
+  border-left: 3px solid var(--gold-border);
+  padding-left: 1rem;
+  margin: 1rem 0 0;
 }
 
 .chief-thero-edu-grid {
@@ -131,8 +203,8 @@
   .bank-details__label { min-width: 110px; }
 
   /* Chief thero shrinks to fit */
-  .chief-thero-layout { grid-template-columns: 300px 1fr; }
-  .chief-thero-image-col { min-height: 420px; }
+  .chief-thero-layout { grid-template-columns: 280px 1fr; }
+  .chief-thero-image-col { min-height: 380px; }
 
   /* Dhamma card icon hides early */
   .dhamma-card { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem; }
@@ -143,8 +215,20 @@
    900px BREAKPOINT (chief thero stacks)
    ============================================================ */
 @media (max-width: 900px) {
-  .chief-thero-layout { grid-template-columns: 1fr; }
-  .chief-thero-image-col { min-height: 320px; max-height: 420px; }
+  .chief-thero-layout,
+  .chief-thero-layout.bio-open {
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    align-items: stretch;
+  }
+  .chief-thero-image-col,
+  .chief-thero-image-col.bio-open {
+    position: relative;
+    min-height: 280px;
+    max-height: 360px;
+    border-radius: 16px 16px 0 0;
+    top: 0;
+  }
   .chief-thero-edu-grid { grid-template-columns: 1fr; gap: 1.5rem; }
 }
 

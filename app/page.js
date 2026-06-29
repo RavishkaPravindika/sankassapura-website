@@ -346,7 +346,7 @@ export default function HomePage() {
           <div className="grid--3">
             {[
               { icon: '📞', label: t('contactPreview.phone'), value: '+94718467250', link: 'tel:+94718467250' },
-              { icon: '✉', label: t('contactPreview.email'), value: 'info@sankassapuravihara.org', link: 'mailto:info@sankassapuravihara.org' },
+              { icon: '✉', label: t('contactPreview.email'), value: 'info@sankassapura.org', link: 'mailto:info@sankassapura.org' },
               { icon: '🕐', label: t('contactPreview.hours'), value: t('contactPreview.hoursValue') },
               { icon: '📍', label: t('contactPreview.address'), value: 'Sankassapura Sri Sambuddharaja Buddhist Mansion\nGalle Road\nSri Lanka' },
             ].map((item, i) => (

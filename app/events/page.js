@@ -6,7 +6,7 @@ import SectionWrapper from '@/components/ui/SectionWrapper';
 // ── Event data ─────────────────────────────────────────────────
 const EVENTS_DATA = [
   {
-    id: 1, day: '29', month: 'Jul', year: 2025,
+    id: 1, day: '29', month: 'Jul', year: 2026,
     category: 'poya', categoryLabel: 'Poya Day',
     title: 'Esala Full Moon Poya Day',
     desc: 'Join us for the sacred Esala Poya observance with Bodhi Puja, pirith chanting, and Dhamma sermon.',

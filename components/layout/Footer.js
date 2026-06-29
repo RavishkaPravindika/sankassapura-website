@@ -95,7 +95,7 @@ export default function Footer() {
             <div style={{ marginTop: '1.5rem', fontSize: '0.85rem', color: 'var(--footer-text)', lineHeight: 1.8 }}>
               <p>📍 Sankassapura Sri Sambuddharaja Buddhist Mansion <br /> Galle Road <br /> Sri Lanka</p>
               <p>📞 <a href="tel:+94718467250" style={{ color: 'var(--text-secondary)' }}>+94718467250</a></p>
-              <p>✉ <a href="mailto:info@sankassapuravihara.org" style={{ color: 'var(--text-secondary)' }}>info@sankassapuravihara.org</a></p>
+              <p>✉ <a href="mailto:info@sankassapura.org" style={{ color: 'var(--text-secondary)' }}>info@sankassapura.org</a></p>
             </div>
           </div>
         </div>

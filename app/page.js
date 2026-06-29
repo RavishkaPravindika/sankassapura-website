@@ -6,9 +6,7 @@ import SectionWrapper from '@/components/ui/SectionWrapper';
 import { useTheme } from '@/context/ThemeContext';
 
 const UPCOMING_EVENTS = [
-  { day: '12', month: 'Jul', category: 'Poya Day', title: 'Esala Full Moon Poya Day', time: '6:00 AM', venue: 'Main Shrine Hall' },
-  { day: '19', month: 'Jul', category: 'Meditation', title: 'Weekend Mindfulness Retreat', time: '8:00 AM', venue: 'Meditation Hall' },
-  { day: '26', month: 'Jul', category: 'Dhamma', title: 'Dhamma Sermon by Ven. Ariya Wimala Thissa Thero', time: '7:00 PM', venue: 'Community Hall' },
+  { day: '29', month: 'Jul', category: 'Poya Day', title: 'Esala Full Moon Poya Day', time: '6:00 AM', venue: 'Main Shrine Hall' },
 ];
 
 const ACTIVITIES = [
@@ -23,12 +21,12 @@ const ACTIVITIES = [
 ];
 
 const GALLERY_IMAGES = [
-  { src: '/images/hero_temple.png', alt: 'Temple exterior' },
-  { src: '/images/gallery_vesak.png', alt: 'Vesak festival' },
-  { src: '/images/gallery_ceremony.png', alt: 'Ceremony' },
-  { src: '/images/gallery_meditation.png', alt: 'Meditation program' },
-  { src: '/images/about_temple.png', alt: 'Monk under Bodhi tree' },
-  { src: '/images/donations_section.png', alt: 'Temple offerings' },
+  { src: '/images/Bodhi_tree.JPG', alt: 'Temple exterior' },
+  { src: '/images/S_Mansion.JPG', alt: 'Vesak festival' },
+  { src: '/images/Mansion_wide1.JPG', alt: 'Ceremony' },
+  { src: '/images/Statue1.JPG', alt: 'Meditation program' },
+  { src: '/images/Statue2.JPG', alt: 'Monk under Bodhi tree' },
+  { src: '/images/Statue3.JPG', alt: 'Temple offerings' },
 ];
 
 export default function HomePage() {
@@ -62,12 +60,12 @@ export default function HomePage() {
         <div className="hero__overlay" aria-hidden="true" />
         <div className="container">
           <div className="hero__content">
-            <div className="hero__label">☸ &nbsp; Theravāda Buddhist Temple &nbsp; ☸</div>
+            <div className="hero__label">☸ &nbsp; {t('hero.label')} &nbsp; ☸</div>
             <p className="hero__welcome">{t('hero.welcome')}</p>
             <h1 className="hero__title">
-              <span className="hero__title-line">Sankassapura</span>
-              <span className="hero__title-line">Sri Sambuddharaja</span>
-              <span className="hero__title-line">Buddhist Mansion</span>
+              <span className="hero__title-line">{t('hero.templeName1')}</span>
+              <span className="hero__title-line">{t('hero.templeName2')}</span>
+              <span className="hero__title-line">{t('hero.templeName3')}</span>
             </h1>
             <p className="hero__tagline">{t('hero.tagline')}</p>
             <blockquote className="hero__quote">
@@ -95,7 +93,8 @@ export default function HomePage() {
                 <p className="section-label">{t('aboutPreview.sectionLabel')}</p>
                 <h2 className="section-title">{t('aboutPreview.title')}</h2>
                 <div className="lotus-divider"><span className="lotus-divider-icon">🪷</span></div>
-                <p style={{ marginBottom: '2rem' }}>{t('aboutPreview.description')}</p>
+                <p style={{ marginBottom: '2rem' }}>{t('aboutPreview.description1')}</p>
+                <p style={{ marginBottom: '2rem' }}>{t('aboutPreview.description2')}</p>
                 <Link href="/about" className="btn btn--primary">{t('aboutPreview.learnMore')}</Link>
               </div>
               <div className="content-image">
@@ -327,7 +326,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="donation-cta-card__image">
-                <Image src="/images/donations_section.png" alt="Temple oil lamps offering" fill style={{ objectFit: 'cover' }} />
+                <Image src="/images/lotus_hero.png" alt="Temple oil lamps offering" fill style={{ objectFit: 'cover' }} />
                 <div className="donation-cta-card__image-overlay" />
               </div>
             </div>

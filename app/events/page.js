@@ -6,54 +6,54 @@ import SectionWrapper from '@/components/ui/SectionWrapper';
 // ── Event data ─────────────────────────────────────────────────
 const EVENTS_DATA = [
   {
-    id: 1, day: '12', month: 'Jul', year: 2025,
+    id: 1, day: '29', month: 'Jul', year: 2025,
     category: 'poya', categoryLabel: 'Poya Day',
     title: 'Esala Full Moon Poya Day',
     desc: 'Join us for the sacred Esala Poya observance with Bodhi Puja, pirith chanting, and Dhamma sermon.',
     time: '6:00 AM – 9:00 PM', venue: 'Main Shrine Hall', free: true, registration: false,
   },
-  {
-    id: 2, day: '19', month: 'Jul', year: 2025,
-    category: 'meditation', categoryLabel: 'Meditation',
-    title: 'Weekend Mindfulness Retreat',
-    desc: 'A two-day retreat for practitioners of all levels. Learn Samatha and Vipassanā meditation techniques.',
-    time: '8:00 AM – 5:00 PM', venue: 'Meditation Hall', free: false, registration: true,
-  },
-  {
-    id: 3, day: '26', month: 'Jul', year: 2025,
-    category: 'dhamma', categoryLabel: 'Dhamma Sermon',
-    title: 'Dhamma Discourse by Ven. Dhammāloka Thero',
-    desc: 'Monthly public Dhamma sermon in Sinhala and English. All are welcome.',
-    time: '7:00 PM – 9:00 PM', venue: 'Community Hall', free: true, registration: false,
-  },
-  {
-    id: 4, day: '09', month: 'Aug', year: 2025,
-    category: 'sil', categoryLabel: 'Sil Campaign',
-    title: 'Atapirikara Sil Campaign',
-    desc: 'Observe the Eight Precepts (Atasil) for one full day. Meals provided. White clothing recommended.',
-    time: '5:30 AM – 6:00 PM', venue: 'Temple Grounds', free: true, registration: true,
-  },
-  {
-    id: 5, day: '23', month: 'Aug', year: 2025,
-    category: 'cultural', categoryLabel: 'Cultural Event',
-    title: 'Sinhala Cultural Evening',
-    desc: 'An evening celebrating Sri Lankan arts, music, traditional dance, and food. Families welcome.',
-    time: '5:00 PM – 9:00 PM', venue: 'Community Hall', free: false, registration: true,
-  },
-  {
-    id: 6, day: '10', month: 'Sep', year: 2025,
-    category: 'poya', categoryLabel: 'Poya Day',
-    title: 'Binara Full Moon Poya Day',
-    desc: 'Monthly Poya Day observance with Dana, pirith, and Dhamma discussions.',
-    time: '6:00 AM – 9:00 PM', venue: 'Main Shrine Hall', free: true, registration: false,
-  },
-  {
-    id: 7, day: '27', month: 'Sep', year: 2025,
-    category: 'community', categoryLabel: 'Community',
-    title: 'Community Welfare & Children\'s Day',
-    desc: 'A special day for children with Dhamma games, arts, and prizes. Community lunch for all.',
-    time: '10:00 AM – 4:00 PM', venue: 'Temple Garden', free: true, registration: false,
-  },
+  // {
+  //   id: 2, day: '19', month: 'Jul', year: 2025,
+  //   category: 'meditation', categoryLabel: 'Meditation',
+  //   title: 'Weekend Mindfulness Retreat',
+  //   desc: 'A two-day retreat for practitioners of all levels. Learn Samatha and Vipassanā meditation techniques.',
+  //   time: '8:00 AM – 5:00 PM', venue: 'Meditation Hall', free: false, registration: true,
+  // },
+  // {
+  //   id: 3, day: '26', month: 'Jul', year: 2025,
+  //   category: 'dhamma', categoryLabel: 'Dhamma Sermon',
+  //   title: 'Dhamma Discourse by Ven. Dhammāloka Thero',
+  //   desc: 'Monthly public Dhamma sermon in Sinhala and English. All are welcome.',
+  //   time: '7:00 PM – 9:00 PM', venue: 'Community Hall', free: true, registration: false,
+  // },
+  // {
+  //   id: 4, day: '09', month: 'Aug', year: 2025,
+  //   category: 'sil', categoryLabel: 'Sil Campaign',
+  //   title: 'Atapirikara Sil Campaign',
+  //   desc: 'Observe the Eight Precepts (Atasil) for one full day. Meals provided. White clothing recommended.',
+  //   time: '5:30 AM – 6:00 PM', venue: 'Temple Grounds', free: true, registration: true,
+  // },
+  // {
+  //   id: 5, day: '23', month: 'Aug', year: 2025,
+  //   category: 'cultural', categoryLabel: 'Cultural Event',
+  //   title: 'Sinhala Cultural Evening',
+  //   desc: 'An evening celebrating Sri Lankan arts, music, traditional dance, and food. Families welcome.',
+  //   time: '5:00 PM – 9:00 PM', venue: 'Community Hall', free: false, registration: true,
+  // },
+  // {
+  //   id: 6, day: '10', month: 'Sep', year: 2025,
+  //   category: 'poya', categoryLabel: 'Poya Day',
+  //   title: 'Binara Full Moon Poya Day',
+  //   desc: 'Monthly Poya Day observance with Dana, pirith, and Dhamma discussions.',
+  //   time: '6:00 AM – 9:00 PM', venue: 'Main Shrine Hall', free: true, registration: false,
+  // },
+  // {
+  //   id: 7, day: '27', month: 'Sep', year: 2025,
+  //   category: 'community', categoryLabel: 'Community',
+  //   title: 'Community Welfare & Children\'s Day',
+  //   desc: 'A special day for children with Dhamma games, arts, and prizes. Community lunch for all.',
+  //   time: '10:00 AM – 4:00 PM', venue: 'Temple Garden', free: true, registration: false,
+  // },
 ];
 
 const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];

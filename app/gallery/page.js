@@ -5,18 +5,18 @@ import { useLanguage } from '@/context/LanguageContext';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 
 const GALLERY_ITEMS = [
-  { src: '/images/hero_temple.png', alt: 'Temple at sunrise', category: 'temple', title: 'Morning at the Temple' },
-  { src: '/images/gallery_vesak.png', alt: 'Vesak lanterns', category: 'vesak', title: 'Vesak Festival Celebration' },
-  { src: '/images/gallery_ceremony.png', alt: 'Puja ceremony', category: 'ceremonies', title: 'Sacred Puja Ceremony' },
-  { src: '/images/gallery_meditation.png', alt: 'Meditation session', category: 'meditation', title: 'Mindfulness Retreat' },
-  { src: '/images/about_temple.png', alt: 'Monk under Bodhi tree', category: 'temple', title: 'Contemplation Under the Bodhi Tree' },
-  { src: '/images/donations_section.png', alt: 'Temple oil lamps', category: 'ceremonies', title: 'Evening Oil Lamp Offering' },
-  { src: '/images/history_temple.png', alt: 'Ancient temple ruins', category: 'historical', title: 'Historical Temple Architecture' },
-  { src: '/images/thero_chief.png', alt: 'Chief Thero in library', category: 'temple', title: 'Dhamma Library Study' },
-  { src: '/images/gallery_vesak.png', alt: 'Vesak decorations', category: 'vesak', title: 'Vesak Thorana Illuminations' },
-  { src: '/images/gallery_ceremony.png', alt: 'Flower offerings', category: 'community', title: 'Community Offering Day' },
-  { src: '/images/gallery_meditation.png', alt: 'Group meditation', category: 'meditation', title: 'Sil Campaign Meditation' },
-  { src: '/images/hero_temple.png', alt: 'Temple exterior detail', category: 'temple', title: 'Temple Gateway' },
+  { src: '/images/Statue1.JPG', alt: ' ', category: 'temple', title: ' ' },
+  { src: '/images/Statue2.JPG', alt: ' ', category: 'temple', title: ' ' },
+  { src: '/images/Statue3.JPG', alt: ' ', category: 'temple', title: ' ' },
+  { src: '/images/Statue4.JPG', alt: ' ', category: 'temple', title: ' ' },
+  { src: '/images/Statue5.JPG', alt: ' ', category: 'temple', title: ' ' },
+  { src: '/images/Statue6.JPG', alt: ' ', category: 'temple', title: ' ' },
+  { src: '/images/Statue7.JPG', alt: ' ', category: 'temple', title: ' ' },
+  { src: '/images/S_Mansion.JPG', alt: ' ', category: 'temple', title: ' ' },
+  { src: '/images/Mansion_wide1.JPG', alt: ' ', category: 'poson' || 'temple', title: ' ' },
+  { src: '/images/Bodhi_tree.JPG', alt: ' ', category: 'temple', title: ' ' },
+  { src: '/images/about_temple.JPG', alt: ' ', category: 'historical', title: ' ' },
+  { src: '/images/Old_temple2.jpeg', alt: ' ', category: 'historical', title: ' ' },
 ];
 
 export default function GalleryPage() {

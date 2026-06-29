@@ -54,15 +54,15 @@ export default function AboutPage() {
           <SectionWrapper>
             <div className="content-split">
               <div>
-                <p className="section-label">{t('about.intro.title')}</p>
-                <h2 className="section-title">{t('about.mission.title')}</h2>
+                <p className="section-label">{t('about.intro.label')}</p>
+                <h2 className="section-title">{t('about.intro.title')}</h2>
                 <div className="lotus-divider"><span className="lotus-divider-icon">🪷</span></div>
                 <p style={{ marginBottom: '1.25rem' }}>{t('about.intro.p1')}</p>
                 <p style={{ marginBottom: '2rem' }}>{t('about.intro.p2')}</p>
                 {/* <Link href="/contact" className="btn btn--primary">{t('common.learnMore')}</Link> */}
               </div>
               <div className="content-image">
-                <Image src="/images/about_temple.png" alt="Temple interior" width={600} height={480}
+                <Image src="/images/about_temple.jpg" alt="Temple interior" width={600} height={480}
                   style={{ objectFit: 'cover', width: '100%', height: '100%', borderRadius: 12 }} />
               </div>
             </div>
